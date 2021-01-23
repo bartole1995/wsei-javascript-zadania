@@ -12,7 +12,7 @@ zadanie1
 const favFruits = ['apple', 'banana', 'mango', 'orange', 'pineapple', 'strawberry'];
  function makeList(list){
      const ol = document.createElement("ol");
-     // root.appendChild(ol);
+      root.appendChild(ol);
      list.forEach(el =>{
          const li = document.createElement("li");
          li.textContent = el;
@@ -55,18 +55,18 @@ nie okreœlony event, dlatego co drugi element usunie siê po kliknieciu 'f'
      span2: 'to jest span',
  }
 
- //nie dzia³a
- // for(var tag in html){
- //     console.log(tag);
- //     if(tag.includes("div")){
- //         const div = document.createElement("div");
- //         div.classList.add(this.tag);
- //         // console.log(tag);
- //         div.textContent = this;
+ nie dzia³a
+  for(var tag in html){
+      console.log(tag);
+      if(tag.includes("div")){
+          const div = document.createElement("div");
+          div.classList.add(this.tag);
+           console.log(tag);
+          div.textContent = this;
 
- //         root.appendChild(div);
- //     }
- // }
+          root.appendChild(div);
+      }
+  }
 
  const html = `
  <div id="div1">to jest div</div>

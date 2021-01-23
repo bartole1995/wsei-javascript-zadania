@@ -15,15 +15,15 @@
  const task2Element = document.querySelector(".short-list");
 
  function task2(list){
-     //punkt1
+     punkt1
      console.log(list.innerHTML);
-     //punkt2
+     punkt2
      console.log(list.outerHTML);
-     //punkt3
+     punkt3
      console.log(list.className);
-     //punkt4
+     punkt4
      console.dir(list.classList);
-     //punkt5
+     punkt5
  	console.log(list.dataset);
  }
 

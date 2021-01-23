@@ -37,7 +37,7 @@ for(let i = 0; i <= n; i++){
     
 }
 
-// warunek ? true : false !=0 ??
+ warunek ? true : false !=0 ??
 //Zadanie 6
 for (var i = 0; i < 3; i++) {
     for (var j= 0; j < 4; j++) {

@@ -19,18 +19,18 @@ if(typeof(myTable[i]) == ‘string’){
 //Zadanie 3
 a)
 const arr = [13, 51, 3, -2, 5, 6, 8];
-// 1
+ 1
 console.log(arr.reduce((a, b) => a + b));
 b)
 const arr = [13, 51, 3, -2, 5, 6, 8];
-// 1
+ 1
 console.log(arr.reduce((a, b) => a - b));
 
 
 
 c)
 const arr = [13, 51, 3, -2, 5, 6, 8];
-// 1
+ 1
 console.log(arr.reduce((a, b) => a + b  / arr.length));
 
 d)
@@ -119,7 +119,7 @@ function sumIndexesOfTwoArrays(arr1, arr2) {
     arr2.forEach((v, i) => arrSum += i);
     return arrSum;
 }
-// 0 + 0 + 1 + 2
+ 0 + 0 + 1 + 2
 console.log(sumIndexesOfTwoArrays(['el'], ['el', 'el', 'el']));
 
 // Zadanie 9:

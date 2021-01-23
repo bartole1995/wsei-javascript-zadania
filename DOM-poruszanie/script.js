@@ -62,14 +62,14 @@ for(var i = 0; i < elements.length; i++){
     elements[i].addEventListener('mouseover', function(){
         var color = this.style.backgroundColor;
         
-        //listElements[0].style.backgroundColor = color;
-        //listElements[listElements.length - 1].style.backgroundColor = color;
-        /*for(var j = 0; j < listElements.length; j++) {
+        listElements[0].style.backgroundColor = color;
+        listElements[listElements.length - 1].style.backgroundColor = color;
+        for(var j = 0; j < listElements.length; j++) {
             if(j % 2 !== 0) {
                 listElements[j].style.backgroundColor = color;
             }
         }*/
-        /*for(var j = 0; j < listElements.length; j++) {
+        for(var j = 0; j < listElements.length; j++) {
             listElements[j].style.backgroundColor = color;
         }*/
         ulElement.style.backgroundColor = color;
