@@ -1,103 +1,117 @@
-//zadanie 1
+// zadanie 1
+const divs = document.querySelectorAll('.more-divs');
 
- const task1Elements = document.querySelectorAll(".more-divs");
- const tagArray = [];
+function listOfDivs(paramArr) {
+    let newArray = [];
+    
+    for (let i = 0; i < paramArr.length; i++) {
+        newArray.push(paramArr[i].tagName);
+    }
+    return newArray;
+}
 
- function task1(...elements){
-     elements.forEach(el => tagArray.push(el));
-     console.log(tagArray);
- }
+console.log(listOfDivs(divs));
+// zadanie 2
 
- task1(task1Elements);
+function task2(param){
+    //1
+    console.log(param.innerHTML);
+    //2
+    console.log(param.outerHTML);
+    //3
+    console.log(param.className);
+    //4
+    console.log([...param.classList]);
+    //5
+    console.log(param.dataset);
 
-//zadanie2
+}
 
- const task2Element = document.querySelector(".short-list");
+task2(document.querySelector(".short-list"))
+// zadanie 3
+const numbersDataset = document.getElementById('datasetCheck');
+const thirdTask = takeNumbers => {
+    const firstNumber = parseInt(takeNumbers.dataset.numberone)
+    const secondNumber = parseInt(takeNumbers.dataset.numbertwo)
+    const thirdNumber = parseInt(takeNumbers.dataset.numberThree)
+    let adding = firstNumber + secondNumber + thirdNumber
+    let substraction = firstNumber - secondNumber - thirdNumber;
+    return [adding, substraction];
+}
+console.log(thirdTask(numbersDataset));
+// zadanie 4
 
- function task2(list){
-     punkt1
-     console.log(list.innerHTML);
-     punkt2
-     console.log(list.outerHTML);
-     punkt3
-     console.log(list.className);
-     punkt4
-     console.dir(list.classList);
-     punkt5
- 	console.log(list.dataset);
- }
+document.getElementById("spanText").innerText =  "dowolny";
 
- task2(task2Element);
+// zadanie 5
 
+document.getElementById("spanText").className =  "newClassName";
+// zadanie 6
+var element = document.getElementById("classes");
+var list = element.classList;
 
-//zadanie 3
+var concat = [];
+for (let i = 0; i< list.length; i++)
+    {
+        concat.push(list[i]);
+        console.log(list[i]);
+    }
+console.log(concat.join('+'));
+element.className = 'Usunieto wszystkie klasy';
+// zadanie 7 
+const list = document.querySelectorAll('#longList > li')
 
- const datasetCheck =  document.getElementById("datasetCheck");
- let sum = 0;
- let subtraction = 0;
- const numbers = [parseInt(datasetCheck.dataset.numberOne), parseInt(datasetCheck.dataset.numberTwo), parseInt(datasetCheck.dataset.numberThree)];
+function addAttributes(elements) {
 
- function add(num1, num2, num3){
-     sum = (num1+num2+num3);
- }
+    elements.forEach( element => {
+        if(!element.getAttribute("data-text")){
+            element.dataset.text = "text";
+        }
+    })
 
- function del(num1, num2, num3){
-     subtraction = num1-num2-num3;
- }
- add(numbers[0], numbers[1], numbers[2]);
- del(numbers[0], numbers[1], numbers[2]);
+}
+const result = addAttributes(list);
+// zadanie 8
+function zad8(className) {
+    let obj = {newClass: className};
+    zad8_1(obj);
+}
 
- console.log(`Sum: ${sum}`);
- console.log(`Del: ${subtraction}`);
+function zad8_1(obj) {
+    let zmienna = obj.newClass;
+    document.getElementById('myDiv').className = zmienna;
+}
 
-//zadanie 4
- document.getElementById("spanText").textContent = "lorem ipsum dolor amet";
-//zadanie 5
- document.getElementById("spanText").classList.add("foo"); 
-
-//zadanie 6
- const listOfClasses = document.getElementById("classes").classList;
- const classesArray = [];
- let classesStr = "";
-function showClasses(el){
-     el.forEach(cl => {
-         classesArray.push(cl);
-         console.log(`${cl}\n`);
-         classesStr += `${cl}+`;
-         document.getElementById("classes").removeAttribute("class");
-     });
-     console.log(classesStr);
-     console.log("Usuniêto wszystkie klasy!");    
- }
- showClasses(listOfClasses);
-
-//zadanie 7
+zad8('string_z_parametru');
+// zadanie 9
+function addClass(param){
+    param = parseInt(param);
+    const numbers = document.querySelector("#numbers");
+    if(param %2===0){
+        numbers.className = "even";
+    }
+    else{
+        numbers.className = "odd";
+    }
+    
+}
+var randomNum = Math.floor(Math.random() * 11);
+addClass(randomNum)
+// zadanie 10
  const longList = document.querySelectorAll("#longList li");
- function task7([...liEl]){
-     liEl.forEach(li => li.dataset.text = "text");
+ const values = [];
+ function task10(list){
+     list.forEach(child => values.push(child.textContent));
+     console.log(values);
  }
- task7(longList);
-//zadanie 8
+ task10(longList);
 
- const lorem = "lorem";
-
- function task8(str){
-     const strObj = {
-         newClass: str,
-     }
-     setClass(strObj.newClass);
+// zadanie 11
+ const longList = document.querySelectorAll("#longList li");
+ function task11(list){
+     list.forEach(li => {
+         li.dataset.text = li.textContent;
+         li.textContent = Math.floor(Math.random()*10);
+     })
  }
- function setClass(cl){
-     const klass = cl;
-     document.getElementById("myDiv").classList.add(klass);
- }
- task8(lorem);
-
-//zadanie 9
- const numbersEl = document.getElementById("numbers");
- const num = Math.floor(Math.random()*10);
-
- function setClass(nr){
-     nr%2==0 ? numbersEl.classList.add("even") : numbersEl.classList.add("odd");
- }
-setClass(num);
+ task11(longList);

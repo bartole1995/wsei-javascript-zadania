@@ -4,6 +4,12 @@ let sayHi = () => {
 };
 
 sayHi();
+// Zadanie 2:
+function print(liczba) {
+    console.log(liczba);
+}
+
+print('test liczba');
 //zadanie 3
 let txt = 'omg';
 returnString  = (txt) => {

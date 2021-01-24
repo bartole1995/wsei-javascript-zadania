@@ -128,3 +128,51 @@ constructor.up();
 constructor.showLevel();
 constructor.down();
 constructor.showLevel();
+// zadanie 4
+
+     function Ladder(maxSteps) {
+         this.maxSteps = maxSteps;
+         let currentStep = 0;
+
+         const txt = {
+             startStep: 'Start step: ',
+             goingUp: "You're climbing up, step: ",
+             goingDown: "You're going down, step: ",
+             maxHeight: "You've reached the top of the ladder!",
+             minHeight: "You've reached the bottom of the ladder!",
+         }
+
+         this.goUp = function (stepsToGo) {
+             console.log(txt.startStep + currentStep);
+
+             for (let i = 0; i < stepsToGo; i++) {
+                 if (currentStep < maxSteps) {
+                     console.log(`${txt.goingUp}${++currentStep}`);
+                 } else {
+                     console.log(`${txt.maxHeight}`);
+                     currentStep = maxSteps;
+                     break;
+                 }
+             }
+         }
+
+         this.goDown = function (stepsToGo) {
+             console.log(txt.startStep + currentStep);
+
+             for (let i = 0; i < stepsToGo; i++) {
+                 if (currentStep > 0) {
+                     currentStep--;
+                     console.log(`${txt.goingDown}${currentStep}`);
+                 } else {
+                     console.log(`${txt.minHeight}`);
+                     currentStep = 0;
+                     break;
+                 }
+             }
+         }
+
+     }
+
+     const l1 = new Ladder(10);
+     l1.goUp(2);
+     l1.goDown(1);
